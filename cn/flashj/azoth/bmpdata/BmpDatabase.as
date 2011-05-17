@@ -1,9 +1,5 @@
 package cn.flashj.azoth.bmpdata
 {
-	import com.buraks.utils.fastmem;
-
-	import org.mousebomb.utils.TimerCounter;
-
 	import flash.display.BitmapData;
 	import flash.geom.Rectangle;
 	import flash.system.ApplicationDomain;
