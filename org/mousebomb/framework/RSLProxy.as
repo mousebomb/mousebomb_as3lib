@@ -18,6 +18,7 @@ package org.mousebomb.framework
 	[Event(name="RSL_NEXT", type="org.mousebomb.events.RSLEvent")]
 	[Event(name="RSL_LOADCOMPLETE", type="org.mousebomb.events.RSLEvent")]
 	[Event(name="RSL_PROGRESS", type="org.mousebomb.events.RSLEvent")]
+	[Event(name="RSL_TOTAL_PROGRESS", type="org.mousebomb.events.RSLEvent")]
 	[Event(name="RSL_ONECOMPLETE", type="org.mousebomb.events.RSLEvent")]
 	public class RSLProxy extends EventDispatcher
 	{
