@@ -1,19 +1,16 @@
 package org.mousebomb.srcloader 
 {
-	import flash.events.EventDispatcher;	
-	
 	import org.mousebomb.events.SrcloaderEvent;
-	import org.mousebomb.utils.Debuger;
 	import org.mousebomb.utils.HashMap;
-	
-	import flash.events.Event;
-	import flash.events.IOErrorEvent;
+
+	import flash.events.EventDispatcher;
 	import flash.events.ProgressEvent;
-	import flash.utils.ByteArray;	
+	import flash.utils.ByteArray;
 
 	/**
 	 * @author Mousebomb
 	 * @date 2009-5-27
+	 * @update 2011/5/25 因为MonsterDebug升级到3.1 所以弃用了原来的Debuger
 	 */
 	public class SrcMain extends EventDispatcher
 	{
@@ -83,11 +80,11 @@ package org.mousebomb.srcloader
 		 */
 		public function load(key : String,type : int,url : String) : void
 		{
-			Debuger.trace("请求加载资源 key=" + key + " ,url=" + url);
+			trace("请求加载资源 key=" + key + " ,url=" + url);
 			//先要判断是否已经在加载队伍中了
 			if(getStatus(key) != STATUS_AVAILABLE)
 			{
-				Debuger.trace("重复的资源加载请求，key" +key+"已存在，忽略");
+				trace("重复的资源加载请求，key" +key+"已存在，忽略");
 				return ;
 			}
 			var curLoader : SrcloaderBase = (_loadPools[type] as SrcloaderPool).get();
@@ -103,8 +100,8 @@ package org.mousebomb.srcloader
 			}else
 			{
 				_taskQueue.push({key:key, type:type, url:url});
-				Debuger.trace("现在忙，先将任务记下 key=" + key + " ,url="+url);
-				Debuger.trace(_taskQueue);
+				trace("现在忙，先将任务记下 key=" + key + " ,url="+url);
+				trace(_taskQueue);
 			}
 		}
 		
@@ -167,14 +164,14 @@ package org.mousebomb.srcloader
 			var type :int = event.data['type'];
 			_hashMap.put(key, data);
 			_taskLoaderMap.remove(key);
-			Debuger.trace("数据加载完毕 key=" + key);
+			trace("数据加载完毕 key=" + key);
 			//TODO 耦合点
 			dispatchEvent(new SrcloaderEvent(_loadOkNotification[type], key));
 			//该重新调度的就重调度
 			var nextTask : Object = _taskQueue.shift();
 			if(nextTask)
 			{
-				Debuger.trace("请求重新调度 key="+nextTask['key'] + " ,url=" + nextTask['url']);
+				trace("请求重新调度 key="+nextTask['key'] + " ,url=" + nextTask['url']);
 				load(nextTask['key'], nextTask['type'], nextTask['url']);
 			}
 		}
@@ -186,7 +183,7 @@ package org.mousebomb.srcloader
 		{
 			//TODO 耦合点
 			//event.data = {key:_key, type:_type, errText:event.text};
-			Debuger.trace("加载IO错误, key=" + event.data['key']);
+			trace("加载IO错误, key=" + event.data['key']);
 			_taskLoaderMap.remove(event.data['key']);
 			dispatchEvent(new SrcloaderEvent(SrcloaderEvent.IO_ERR,event.data));
 		}

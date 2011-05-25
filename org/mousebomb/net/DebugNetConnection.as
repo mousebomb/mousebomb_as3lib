@@ -3,8 +3,6 @@ package org.mousebomb.net
 	import flash.net.NetConnection;
 	import flash.net.Responder;
 
-	import org.mousebomb.utils.Debug;
-
 	public class DebugNetConnection extends NetConnection
 	{
 		public function DebugNetConnection()
@@ -30,7 +28,7 @@ package org.mousebomb.net
 					argArray.push(arg);
 				}
 				traceObj["args"] = args;
-				Debug.trace4Target("NetConn.call "+command+":", traceObj);
+				trace("NetConn.call "+command+":", traceObj);
 				super.call.apply(this, argArray);
 			}
 			else

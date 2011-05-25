@@ -15,6 +15,8 @@ package org.mousebomb.events
 		//全部加载完成 拟定无参数		public static const RSL_LOADCOMPLETE : String = "RSL_LOADCOMPLETE";
 		//其中一个包加载完成 		public static const RSL_ONECOMPLETE : String = "RSL_ONECOMPLETE";
 		//该类型事件 拟定传出进度比值		public static const RSL_PROGRESS : String = "RSL_PROGRESS";
+		//全部进度 Number
+		public static const RSL_TOTAL_PROGRESS : String = "RSL_TOTAL_PROGRESS";
 		
 		public function RSLEvent(type : String, data : Object = null, bubbles : Boolean = false, cancelable : Boolean = false)
 		{

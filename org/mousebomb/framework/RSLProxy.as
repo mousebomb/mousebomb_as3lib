@@ -1,7 +1,7 @@
 package org.mousebomb.framework
 {
-	import org.mousebomb.events.RSLEvent;
 	import org.mousebomb.classLoader.ClassLoader;
+	import org.mousebomb.events.RSLEvent;
 
 	import flash.events.Event;
 	import flash.events.EventDispatcher;
@@ -151,6 +151,8 @@ package org.mousebomb.framework
 		{
 			var p : Number = (event.bytesLoaded / event.bytesTotal);
 			dispatchEvent(new RSLEvent(RSLEvent.RSL_PROGRESS, p));
+			var tp : Number = ( this.libLoaded()+ p) / this.libCount() ;
+			dispatchEvent(new RSLEvent(RSLEvent.RSL_TOTAL_PROGRESS,tp));
 		}
 
 		private function onAllLoadComp() : void
