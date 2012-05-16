@@ -1,8 +1,6 @@
 package org.mousebomb.srcloader 
 {
-	import org.mousebomb.utils.Debuger;
-	
-	import flash.events.EventDispatcher;	
+	import flash.events.EventDispatcher;
 
 	/**
 	 * 资源加载器池.

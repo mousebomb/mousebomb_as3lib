@@ -4,7 +4,7 @@ package org.mousebomb.framework
 	/**
 	 * 语言包
 	 * 配合framework的config和xml使用
-	 * @author Mousebomb (mousebomb@gmail.com)
+	 * @author Mousebomb ()
 	 * @date 2010-2-22
 	 */
 	public class LangProxy 

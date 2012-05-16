@@ -21,6 +21,7 @@
 		public function Tooltip():void{
 			init();
 			this.addEventListener(Event.ADDED_TO_STAGE,onLoad);
+			this.mouseChildren=false;this.mouseEnabled=false;
 		}
 		/**构建一个文本框,一个白色底板*/
 		private function init():void

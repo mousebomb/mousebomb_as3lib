@@ -2,7 +2,7 @@ package org.mousebomb.utils
 {
 	import flash.net.LocalConnection;
 	/**
-	 * @author Mousebomb (mousebomb@gmail.com)
+	 * @author Mousebomb ()
 	 * @date 2011-1-6
 	 */
 	public class GC

@@ -10,7 +10,7 @@ package org.mousebomb.bmpdisplay
 	/**
 	 * 影片剪辑动画
 	 * Animation是直接转化MovieClip的，而我是将各帧加载进来后可以自定义动画单元组合的
-	 * @author Mousebomb (mousebomb@gmail.com)
+	 * @author Mousebomb ()
 	 * @date 2010-7-1
 	 */
 	public class MovieShim extends BmdContainer  implements IBmpRenderable

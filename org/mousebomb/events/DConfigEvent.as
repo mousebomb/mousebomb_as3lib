@@ -3,7 +3,7 @@ package org.mousebomb.events
 	import flash.events.Event;
 
 	/**
-	 * @author mousebomb mousebomb@gmail.com
+	 * @author mousebomb 
 	 */
 	public class DConfigEvent extends Event
 	{

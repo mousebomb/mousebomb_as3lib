@@ -1,20 +1,25 @@
-package org.mousebomb.utils 
+package org.mousebomb.utils
 {
 
 	/**
-	 * @author Mousebomb (mousebomb@gmail.com)
+	 * @author Mousebomb ()
 	 * @date 2010-8-27
 	 */
-	public class SimpleMap 
+	public class SimpleMap
 	{
-		private var _data : Object = {};
+		private var _data:Object = {};
 
-		public function SimpleMap() 
+		public function SimpleMap()
 		{
 			//
 		}
-		
-		public function containsKey(key : *) : Boolean
+
+		public function reset():void
+		{
+			_data = new Object();
+		}
+
+		public function containsKey( key:* ):Boolean
 		{
 			return _data[key] != null;
 		}
@@ -23,7 +28,7 @@ package org.mousebomb.utils
 		 * 塞进来
 		 * @param id string或int
 		 */
-		public function put(id : * ,value : *) : void
+		public function put( id:*, value:* ):void
 		{
 			_data[id] = value;
 		}
@@ -31,7 +36,7 @@ package org.mousebomb.utils
 		/**
 		 * 拿过去
 		 */
-		public function getValue(id : *) : *
+		public function getValue( id:* ):*
 		{
 			return _data[id];
 		}
@@ -39,7 +44,7 @@ package org.mousebomb.utils
 		/**
 		 * 删一个
 		 */
-		public function remove(id : *) : void
+		public function remove( id:* ):void
 		{
 			delete _data[id];
 		}
@@ -47,7 +52,7 @@ package org.mousebomb.utils
 		/**
 		 * 获得所有，用来foreach
 		 */
-		public function getValues() : Object
+		public function getValues():Object
 		{
 			return _data;
 		}

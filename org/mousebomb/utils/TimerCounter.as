@@ -3,7 +3,7 @@ package org.mousebomb.utils
 	import flash.utils.getTimer;
 
 	/**
-	 * @author Mousebomb (mousebomb@gmail.com)
+	 * @author Mousebomb ()
 	 * @date 2010-7-8
 	 */
 	public class TimerCounter extends Object 

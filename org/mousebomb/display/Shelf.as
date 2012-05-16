@@ -4,7 +4,7 @@ package org.mousebomb.display
 
 	/**
 	 * 二维架子容器
-	 * @author mousebomb mousebomb@gmail.com
+	 * @author mousebomb 
 	 * 
 	 * 必须配置的：
 	 * 	marginX

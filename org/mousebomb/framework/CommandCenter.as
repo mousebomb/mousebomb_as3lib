@@ -6,7 +6,7 @@ package org.mousebomb.framework
 	/**
 	 * 命令分派中心
 	 * 将某些Notify注册到对应的控制器
-	 * @author Mousebomb (mousebomb@gmail.com)
+	 * @author Mousebomb ()
 	 * @date 2010-12-20
 	 */
 	public class CommandCenter

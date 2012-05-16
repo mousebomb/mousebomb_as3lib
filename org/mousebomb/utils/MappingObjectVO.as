@@ -5,7 +5,7 @@ package org.mousebomb.utils
 
 	/**
 	 * 映射Object与VO
-	 * @author Mousebomb (mousebomb@gmail.com)
+	 * @author Mousebomb ()
 	 * @date 2010-6-9
 	 */
 	public class MappingObjectVO extends Object 

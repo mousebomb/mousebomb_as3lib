@@ -13,7 +13,7 @@ package org.mousebomb.display
 	import flash.geom.Rectangle;
 
 	/**
-	 * @author Mousebomb (mousebomb@gmail.com)
+	 * @author Mousebomb ()
 	 */
 	public class Reflection extends Sprite 
 	{

@@ -18,7 +18,7 @@ package org.mousebomb.map
 	/**
 	 * 带有地图生成功能的寻路
 	 * 根据图先缩放，然后直接getpixel
-	 * @author Mousebomb (mousebomb@gmail.com)
+	 * @author Mousebomb ()
 	 * @date 2010-6-16
 	 * @date 2010-07-21 重写
 	 * 

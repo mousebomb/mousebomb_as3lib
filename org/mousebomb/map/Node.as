@@ -3,7 +3,7 @@ package org.mousebomb.map
 
 	/**
 	 * 地图节点
-	 * @author Mousebomb (mousebomb@gmail.com)
+	 * @author Mousebomb ()
 	 * @date 2010-10-3
 	 */
 	public class Node 

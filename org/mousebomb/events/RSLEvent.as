@@ -3,7 +3,7 @@ package org.mousebomb.events
 
 	/**
 	 * 配合org.mousebomb.framework.RSLProxy
-	 * @author Mousebomb (mousebomb@gmail.com)
+	 * @author Mousebomb ()
 	 * @date 2010-2-22
 	 */
 	public class RSLEvent extends MousebombEvent 

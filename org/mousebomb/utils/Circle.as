@@ -6,7 +6,7 @@ package org.mousebomb.utils
 	import flash.geom.Rectangle;
 
 	/**
-	 * @author Mousebomb (mousebomb@gmail.com)
+	 * @author Mousebomb ()
 	 * @date 2010-8-25
 	 */
 	public class Circle extends Object 

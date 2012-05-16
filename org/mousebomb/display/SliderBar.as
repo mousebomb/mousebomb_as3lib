@@ -18,7 +18,7 @@ package org.mousebomb.display
 	 * trackClass
 	 * toolTip
 	 * 使用之前要init
-	 * @author Mousebomb (mousebomb@gmail.com)
+	 * @author Mousebomb ()
 	 * @date 2011-3-2
 	 */
 	public class SliderBar extends Sprite

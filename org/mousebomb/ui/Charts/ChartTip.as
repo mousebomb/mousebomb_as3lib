@@ -6,7 +6,7 @@ package org.mousebomb.ui.Charts
 	import flash.text.TextFieldAutoSize;
 
 	/**
-	 * @author Mousebomb (mousebomb@gmail.com)
+	 * @author Mousebomb ()
 	 * @date 2010-2-28
 	 */
 	public class ChartTip extends Sprite 

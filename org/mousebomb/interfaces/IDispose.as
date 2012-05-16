@@ -2,7 +2,7 @@ package org.mousebomb.interfaces
 {
 
 	/**
-	 * @author Mousebomb (mousebomb@gmail.com)
+	 * @author Mousebomb ()
 	 */
 	public interface IDispose 
 	{

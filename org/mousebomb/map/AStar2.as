@@ -4,7 +4,7 @@ package org.mousebomb.map
 	import org.mousebomb.utils.TimerCounter;
 
 	/**
-	 * @author Mousebomb (mousebomb@gmail.com)
+	 * @author Mousebomb ()
 	 * @date 2010-10-3
 	 */
 	public class AStar2 

@@ -4,7 +4,7 @@ package org.mousebomb.utils
 	import flash.display.MovieClip;
 
 	/**
-	 * @author mousebomb mousebomb@gmail.com
+	 * @author mousebomb 
 	 */
 	public class FrameScript
 	{

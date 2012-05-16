@@ -19,7 +19,7 @@ package org.mousebomb.ui
 	[Event(name="select", type="flash.events.Event")]	[Event(name="scroll", type="flash.events.Event")]
 
 	/**
-	 * @author Mousebomb (mousebomb@gmail.com)
+	 * @author Mousebomb ()
 	 * @date 2009-12-30
 	 */
 	public class DatePicker extends Sprite 

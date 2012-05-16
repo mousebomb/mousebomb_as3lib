@@ -7,7 +7,7 @@ package org.mousebomb.map
 	 * 通用寻路功能
 	 * 给我一个通断数据、或者让我生成通断数据
 	 * 在有通断数据之后，给我两点，返回路径
-	 * @author Mousebomb (mousebomb@gmail.com)
+	 * @author Mousebomb ()
 	 * @date 2010-6-12
 	 */
 	public class PathFinder2 extends EventDispatcher 

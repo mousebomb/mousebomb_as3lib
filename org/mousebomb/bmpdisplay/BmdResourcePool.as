@@ -13,7 +13,7 @@ package org.mousebomb.bmpdisplay
 	 * 考虑到在实际开发中，许多MC要被new出来多次，他们的位图序列如果都一致则应该重用。
 	 * 这个资源池负责转化并存储MC的位图序列
 	 * 我内部有计数器来维护位图是否要dispose
-	 * @author Mousebomb (mousebomb@gmail.com)
+	 * @author Mousebomb ()
 	 * @date 2010-6-21
 	 */
 	public class BmdResourcePool extends Object 

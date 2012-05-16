@@ -7,7 +7,7 @@ package org.mousebomb.ui
 
 	/**
 	 * 可用于UIScrollBar内容的容器
-	 * @author Mousebomb mousebomb@gmail.com
+	 * @author Mousebomb 
 	 */
 	public class ScrollContainer extends Sprite implements IScrollContainer
 	{
@@ -40,7 +40,7 @@ package org.mousebomb.ui
 		{
 			_scrollV = v;
 			scrollRect = new Rectangle(0, v - 1, _scrollWidth, _scrollHeight);
-			trace('set scrollV ,scrollRect: ' + (scrollRect));
+//			trace('set scrollV ,scrollRect: ' + (scrollRect));
 		}
 		
 		/**

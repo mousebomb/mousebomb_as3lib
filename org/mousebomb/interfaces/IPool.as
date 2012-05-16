@@ -1,7 +1,7 @@
 package org.mousebomb.interfaces
 {
 	/**
-	 * @author Mousebomb (mousebomb@gmail.com)
+	 * @author Mousebomb ()
 	 * @date 2011-1-9
 	 */
 	public interface IPool

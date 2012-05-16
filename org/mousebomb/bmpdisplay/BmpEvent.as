@@ -7,7 +7,7 @@ package org.mousebomb.bmpdisplay
 
 	/**
 	 * 传递到flash的事件
-	 * @author Mousebomb (mousebomb@gmail.com)
+	 * @author Mousebomb ()
 	 * @date 2010-11-11
 	 */
 	public class BmpEvent extends Event

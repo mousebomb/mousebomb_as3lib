@@ -7,7 +7,7 @@ package org.mousebomb.ui.Charts
 
 	/**
 	 * 折线图
-	 * @author Mousebomb (mousebomb@gmail.com)
+	 * @author Mousebomb ()
 	 * @date 2010-2-28
 	 */
 	public class LineChart extends Sprite 

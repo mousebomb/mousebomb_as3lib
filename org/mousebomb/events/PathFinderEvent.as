@@ -2,7 +2,7 @@ package org.mousebomb.events
 {
 
 	/**
-	 * @author Mousebomb (mousebomb@gmail.com)
+	 * @author Mousebomb ()
 	 * @date 2010-6-14
 	 */
 	public class PathFinderEvent extends MousebombEvent 

@@ -11,7 +11,7 @@ package org.mousebomb.display
 
 	/**
 	 * Flash自带的HitTestObject有问题，这个类是真正的HitTest
-	 * @author Mousebomb (mousebomb@gmail.com)
+	 * @author Mousebomb ()
 	 * @date 2010-3-14
 	 */
 	public class RealHitTest 

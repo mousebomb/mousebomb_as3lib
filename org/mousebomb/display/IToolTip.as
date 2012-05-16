@@ -1,7 +1,7 @@
 package org.mousebomb.display
 {
 	/**
-	 * @author Mousebomb (mousebomb@gmail.com)
+	 * @author Mousebomb ()
 	 * @date 2011-3-2
 	 */
 	public interface IToolTip

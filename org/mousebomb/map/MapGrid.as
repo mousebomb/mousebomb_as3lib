@@ -2,7 +2,7 @@ package org.mousebomb.map
 {
 
 	/**
-	 * @author Mousebomb (mousebomb@gmail.com)
+	 * @author Mousebomb ()
 	 * @date 2010-10-3
 	 */
 	public class MapGrid 

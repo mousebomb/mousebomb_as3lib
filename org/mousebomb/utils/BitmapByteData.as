@@ -5,7 +5,7 @@ package org.mousebomb.utils
 
 	/**
 	 * 实现位图数据与字节流的转化
-	 * @author Mousebomb (mousebomb@gmail.com)
+	 * @author Mousebomb ()
 	 * @date 2010-9-14
 	 */
 	public class BitmapByteData 

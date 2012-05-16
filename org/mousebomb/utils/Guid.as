@@ -5,7 +5,7 @@ package org.mousebomb.utils
 
 	/**
 	 * 唯一id
-	 * @author Mousebomb (mousebomb@gmail.com)
+	 * @author Mousebomb ()
 	 * @date 2010-2-25
 	 */
 	public class Guid 

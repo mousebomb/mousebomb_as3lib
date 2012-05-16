@@ -5,7 +5,7 @@ package org.mousebomb.display
 	/**
 	 * 带有state的Sprite，用来做可切换state的容器
 	 * 实现类似Flex里state的功能
-	 * @author Mousebomb (mousebomb@gmail.com)
+	 * @author Mousebomb ()
 	 * @date 2010-3-22
 	 */
 	public class StateSprite extends Sprite 

@@ -5,7 +5,7 @@ package org.mousebomb.bmpdisplay
 	import flash.geom.Point;
 
 	/**
-	 * @author Mousebomb (mousebomb@gmail.com)
+	 * @author Mousebomb ()
 	 * @date 2010-6-23
 	 */
 	public class EventCatcher extends Object 

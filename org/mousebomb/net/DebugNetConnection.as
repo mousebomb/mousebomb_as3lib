@@ -1,5 +1,7 @@
 package org.mousebomb.net
 {
+	import com.demonsters.debugger.MonsterDebugger;
+
 	import flash.net.NetConnection;
 	import flash.net.Responder;
 
@@ -10,44 +12,18 @@ package org.mousebomb.net
 			super();
 		}
 
-		private var _debugMode : Boolean = true;
-
-		/**
-		 * 调用服务器
-		 * 取决于是否debug
-		 */
-		public function callServer(command : String, callBack : Function, ...args : *) : void
+		override public function call( command:String, responder:Responder, ...args ):void
 		{
-			if(_debugMode)
+			var argArray:Array = [ command, responder ];
+			var traceObj:Object = { command:command };
+			for each(var arg :* in args)
 			{
-				var responder : Responder = new DebugResponder(callBack, null, command);
-				var argArray : Array = [command,responder];
-				var traceObj : Object = {command:command};
-				for each(var arg :* in args)
-				{
-					argArray.push(arg);
-				}
-				traceObj["args"] = args;
-				trace("NetConn.call "+command+":", traceObj);
-				super.call.apply(this, argArray);
+				argArray.push( arg );
 			}
-			else
-			{
-				super.call(command, new Responder(callBack));
-			}
+			traceObj["args"] = args;
+			MonsterDebugger.trace( "NetConn.call " + command + ":", traceObj );
+			super.call.apply( this, argArray );
 		}
 
-		/**
-		 * 调试模式
-		 */
-		public function get debugMode() : Boolean
-		{
-			return _debugMode;
-		}
-
-		public function set debugMode(debugMode : Boolean) : void
-		{
-			_debugMode = debugMode;
-		}
 	}
 }

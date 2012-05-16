@@ -11,7 +11,7 @@ package org.mousebomb.bmpdisplay
 
 	/**
 	 * 渲染处理
-	 * @author Mousebomb (mousebomb@gmail.com)
+	 * @author Mousebomb ()
 	 * @date 2010-6-25
 	 */
 	public class RenderProcess implements IDispose

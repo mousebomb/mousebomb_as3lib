@@ -10,7 +10,7 @@ package org.mousebomb.interactive
 	 * 拖拽器,由一个句柄拖拽整个物件
 	 * 基于MouseDrager
 	 * 一定要调用init才生效
-	 * @author Mousebomb (mousebomb@gmail.com)
+	 * @author Mousebomb ()
 	 * @date 2011-3-3
 	 */
 	public class DragHandler 

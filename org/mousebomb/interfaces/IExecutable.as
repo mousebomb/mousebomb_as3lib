@@ -1,7 +1,7 @@
 package org.mousebomb.interfaces
 {
 	/**
-	 * @author Mousebomb (mousebomb@gmail.com)
+	 * @author Mousebomb ()
 	 * @date 2010-12-20
 	 */
 	public interface IExecutable

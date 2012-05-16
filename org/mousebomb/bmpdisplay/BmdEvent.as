@@ -4,7 +4,7 @@ package org.mousebomb.bmpdisplay
 	/**
 	 * 内部事件机制
 	 * 与flash的事件无关
-	 * @author Mousebomb (mousebomb@gmail.com)
+	 * @author Mousebomb ()
 	 * @date 2010-6-23
 	 */
 	public class BmdEvent  

@@ -1,7 +1,7 @@
 package org.mousebomb.ui
 {
 	/**
-	 * @author Mousebomb mousebomb@gmail.com
+	 * @author Mousebomb 
 	 */
 	public interface IScrollContainer
 	{
