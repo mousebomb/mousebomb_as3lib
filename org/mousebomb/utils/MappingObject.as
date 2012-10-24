@@ -11,28 +11,13 @@ package org.mousebomb.utils
 	public class MappingObject extends Object 
 	{
 
-		private static var _instance : MappingObject;
-
-		public static function getInstance() : MappingObject 
-		{
-			if (_instance == null)
-							_instance = new MappingObject();
-			return _instance;
-		}
-
-		public function MappingObject() 
-		{
-			if (_instance != null)
-						throw new Error('singleton');
-		}
-
 		/**
 		 * 转化一个Object为一个有类声明的值对象
 		 * 不过不支持数组中的特殊类型，因为那个没有类定义
 		 * @param className 目标类
 		 * @param dataSrc 数据源
 		 */
-		public function doRequest(className : Class , dataSrc : Object) : *
+		public static function doRequest(className : Class , dataSrc : Object) : *
 		{
 			//返回对象
 			var rtObject : * = new className();
@@ -88,7 +73,7 @@ package org.mousebomb.utils
 		 * @param className 目标类
 		 * @param dataSrc 数据源
 		 */
-		public function simpleObject(className : Class , dataSrc : Object):*
+		public static function simpleObject(className : Class , dataSrc : Object):*
 		{
 			//返回对象
 			var rtObject : * = new className();
