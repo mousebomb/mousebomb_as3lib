@@ -4,6 +4,8 @@ package org.mousebomb.utils
 	import flash.display.MovieClip;
 
 	/**
+	 * 给帧标签加回调 <br/>
+	 * 仅用于stage2d的MovieClip
 	 * @author mousebomb 
 	 */
 	public class FrameScript

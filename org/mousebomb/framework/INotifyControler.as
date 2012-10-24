@@ -1,6 +1,5 @@
 package org.mousebomb.framework
 {
-	import org.mousebomb.global.Notify;
 
 	/**
 	 * @author Mousebomb ()

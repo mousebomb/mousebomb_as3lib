@@ -1,11 +1,9 @@
 package org.mousebomb.framework
 {
-	import org.mousebomb.classLoader.ClassLoader;
-	import org.mousebomb.events.RSLEvent;
-
 	import flash.events.Event;
 	import flash.events.EventDispatcher;
 	import flash.events.ProgressEvent;
+
 
 	/**
 	 * <font color="#000000">运行时加载的lib</font>
@@ -14,12 +12,12 @@ package org.mousebomb.framework
 	 * @updated 08-五月-2010 13:57:37
 	 * @updated 2010年9月14日 20:10:54 改成了默认为rsl模式，加载完成后 外部可直接使用类定义
 	 */
-	[Event(name="RSL_STARTLOAD", type="org.mousebomb.events.RSLEvent")]
-	[Event(name="RSL_NEXT", type="org.mousebomb.events.RSLEvent")]
-	[Event(name="RSL_LOADCOMPLETE", type="org.mousebomb.events.RSLEvent")]
-	[Event(name="RSL_PROGRESS", type="org.mousebomb.events.RSLEvent")]
-	[Event(name="RSL_TOTAL_PROGRESS", type="org.mousebomb.events.RSLEvent")]
-	[Event(name="RSL_ONECOMPLETE", type="org.mousebomb.events.RSLEvent")]
+	[Event(name="RSL_STARTLOAD", type="org.mousebomb.framework.RSLEvent")]
+	[Event(name="RSL_NEXT", type="org.mousebomb.framework.RSLEvent")]
+	[Event(name="RSL_LOADCOMPLETE", type="org.mousebomb.framework.RSLEvent")]
+	[Event(name="RSL_PROGRESS", type="org.mousebomb.framework.RSLEvent")]
+	[Event(name="RSL_TOTAL_PROGRESS", type="org.mousebomb.framework.RSLEvent")]
+	[Event(name="RSL_ONECOMPLETE", type="org.mousebomb.framework.RSLEvent")]
 	public class RSLProxy extends EventDispatcher
 	{
 		// rsl键值对

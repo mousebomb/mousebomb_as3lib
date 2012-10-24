@@ -14,6 +14,7 @@ package org.mousebomb.utils
 	import flash.utils.getTimer;
 
 	/**
+	 * 只适用于PC
 	 * @author Mousebomb
 	 * @date 2009-8-28
 	 */

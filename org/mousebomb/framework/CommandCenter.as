@@ -1,7 +1,5 @@
 package org.mousebomb.framework
 {
-	import org.mousebomb.global.GlobalFacade;
-	import org.mousebomb.global.Notify;
 
 	/**
 	 * 命令分派中心

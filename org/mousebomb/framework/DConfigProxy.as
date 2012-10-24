@@ -1,6 +1,5 @@
 package org.mousebomb.framework
 {
-	import org.mousebomb.events.DConfigEvent;
 	import flash.events.Event;
 	import flash.events.EventDispatcher;
 	import flash.events.IOErrorEvent;
@@ -10,9 +9,9 @@ package org.mousebomb.framework
 	import flash.net.URLVariables;
 
 	// 单个XML加载渐进
-	[Event(name="progress", type="flash.events.ProgressEvent")]	[Event(name="CONFIG_PROGRESS", type="org.mousebomb.events.DConfigEvent")]
+	[Event(name="progress", type="flash.events.ProgressEvent")]	[Event(name="CONFIG_PROGRESS", type="org.mousebomb.framework.DConfigEvent")]
 	// 所有XML加载完成
-	[Event(name="complete", type="flash.events.Event")]	[Event(name="CONFIG_LOADCOMPLETE", type="org.mousebomb.events.DConfigEvent")]
+	[Event(name="complete", type="flash.events.Event")]	[Event(name="CONFIG_LOADCOMPLETE", type="org.mousebomb.framework.DConfigEvent")]
 	public class DConfigProxy extends EventDispatcher
 	{
 		private var _loader : URLLoader;
