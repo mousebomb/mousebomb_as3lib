@@ -17,22 +17,26 @@ package org.mousebomb.utils
 	 */
 	public class BitmapDataURLLoader
 	{
-
 		/**
 		 * 数据列表. 
 		 *  key是url,val是BitmapData
 		 */
-		private var dataList : SimpleMap = new SimpleMap();
+		protected var dataList : SimpleMap = new SimpleMap();
 		/**
 		 * 回调
 		 *  key=>url
 		 *   val=> array [func,...]
 		 */
-		private var callbackStack : Object = {};
-		
-		
-		
+		protected var callbackStack : Object = {};
 		private static var _instance : BitmapDataURLLoader;
+		// 限制同时加载用
+		private var delayLoadQueue : Array = [];
+		/**
+		 * 同时加载数量
+		 */
+		public var parallelsNum : int = 3;
+		// 当前加载的
+		private var nowLoading : Array = [];
 
 		public static function getInstance() : BitmapDataURLLoader
 		{
@@ -55,49 +59,68 @@ package org.mousebomb.utils
 		 */
 		public function load(url : String, finishCb : Function, cache : Boolean = true) : void
 		{
-			var loadNew : Boolean=false;
+			var needLoadNew : Boolean = false;
 			if (!cache)
 			{
 				// 禁用缓存的话 就要重新加载
-				trace("禁用缓存,重新加载");
-				loadNew = true;
+				 trace("BitmapDataURLLoader 禁用缓存,重新加载",url);
+				needLoadNew = true;
 			}
 			else
 			{
 				// 启用缓存,检查本地
 				if (dataList.containsKey(url))
 				{
-					trace("有缓存,直接回调");
+					 trace("BitmapDataURLLoader 有缓存,直接回调",url);
 					var bmd : BitmapData = dataList.getValue(url);
 					finishCb(url, bmd);
 				}
 				else
 				{
-					trace("要缓存,但无缓存");
-					loadNew = true;
+					 trace("BitmapDataURLLoader 要缓存,但无缓存",url);
+					needLoadNew = true;
 				}
 			}
-			if (loadNew)
+			if (needLoadNew)
 			{
-				// 回调保存
-				var arr : Array = callbackStack[url];
-				if (arr == null)
+				if (parallelsNum > nowLoading.length && nowLoading.indexOf(url) < 0)
 				{
-					callbackStack[url] = arr = [];
+					trace("BitmapDataURLLoader 开始异步加载");
+					// 当前没有加载这个url,且还可以开始新的加载任务
+					// 则异步加载
+					startAsyncLoad(url, finishCb);
 				}
-				arr.push(finishCb);
-				// 请求
-				var urlRequest : URLRequest = new URLRequest(url);
-				urlRequest.data = new URLVariables();
-				urlRequest.data['cacheCode'] = Math.random();
-				var imgLoader : TheLoader = new TheLoader();
-				imgLoader.key = url;
-				imgLoader.contentLoaderInfo.addEventListener(Event.COMPLETE, onComplete);
-				imgLoader.load(urlRequest);
+				else
+				{
+					trace("BitmapDataURLLoader 排队");
+					// 排队的
+					var cmd : Object = {url: url, finishCb: finishCb, cache: cache};
+					delayLoadQueue.push(cmd);
+				}
 			}
 		}
 
-		private function callback(url : String) : void
+		private function startAsyncLoad(url : String, finishCb : Function) : void
+		{
+			// 回调保存
+			var arr : Array = callbackStack[url];
+			if (arr == null)
+			{
+				callbackStack[url] = arr = [];
+			}
+			arr.push(finishCb);
+			//
+			var urlRequest : URLRequest = new URLRequest(url);
+			urlRequest.data = new URLVariables();
+			urlRequest.data['cacheCode'] = Math.random();
+			var imgLoader : TheLoader = new TheLoader();
+			imgLoader.key = url;
+			imgLoader.contentLoaderInfo.addEventListener(Event.COMPLETE, onComplete);
+			imgLoader.load(urlRequest);
+			nowLoading.push(url);
+		}
+
+		protected function callback(url : String) : void
 		{
 			var arr : Array = callbackStack[url];
 			if (arr == null)
@@ -112,19 +135,30 @@ package org.mousebomb.utils
 			}
 		}
 
-		private function onComplete(event : Event) : void
+		protected function onComplete(event : Event) : void
 		{
-			trace("加载完成");
 			var loader : TheLoader = (event.target as LoaderInfo).loader as TheLoader;
+			trace("BitmapDataURLLoader 加载完成", loader.key);
 			// 处理bmp
 			var bmd : BitmapData = new BitmapData(loader.content.width, loader.content.height, true, 0);
 			bmd.draw(loader.content);
 			// 加入
 			dataList.put(loader.key, bmd);
+			// 批量回调
 			callback(loader.key);
+			// 标记为当前不在加载这个url了
+			var index : int = nowLoading.indexOf(loader.key);
+			nowLoading.splice(index, 1);
+			trace("BitmapDataURLLoader 出队,",index);
+			// 检查delay队列
+			var cmd : Object = delayLoadQueue.shift();
+			if (cmd != null)
+				load(cmd.url, cmd.finishCb, cmd.cache);
 		}
 	}
 }
+
+
 import flash.display.Loader;
 
 class TheLoader extends Loader

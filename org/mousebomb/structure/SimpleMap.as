@@ -56,5 +56,14 @@ package org.mousebomb.structure
 		{
 			return _data;
 		}
+		public function getValuesAsArray():Array
+		{
+			var ending:Array = [];
+			for each(var item : * in _data)
+			{
+				ending.push( item );
+			}
+			return ending;
+		}
 	}
 }
