@@ -27,11 +27,11 @@ package org.mousebomb.utils
 			// 变量类型
 			var vType : String;
 			// 找到属性、可用的setter
-			for each ( var v : XML in classInfo..*.( 
+			for each (var v : XML in classInfo..*.( 
 			name() == "variable" || ( 
 			name() == "accessor" // 确定可写入数据
 			&& attribute("access") != "readonly" ) 
-			) )
+			))
 			{
 				// 记录类型和键
 				vType = v.@type;
@@ -86,7 +86,12 @@ package org.mousebomb.utils
 				}
 				catch(e : *)
 				{
-					trace("MappingObjectVO/simpleObject", e);
+					if (e is ReferenceError)
+					{
+						trace("MappingObjectVO/simpleObject 忽略字段"+key);
+					}else{
+						//trace("MappingObjectVO/simpleObject", e);
+					}
 				}
 			}
 			return rtObject;
