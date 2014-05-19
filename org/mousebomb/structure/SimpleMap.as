@@ -69,14 +69,20 @@ package org.mousebomb.structure
 		/**
 		 * 搜索列表中 字段的值与keyword局部匹配的项目。
 		 */
-		public function search(keyword:String , searchField :String) : Array
+		public function search(keyword:String , ...searchFields:Array) : Array
 		{
 			var ending:Array = [];
-			for each(var item : * in _data)
+			for each(var searchField :String in searchFields)
 			{
-				var val :String = item[searchField];
-				if(val.indexOf(keyword) != -1)
-					ending.push( item );
+				for each(var item : * in _data)
+				{
+					var val :String = item[searchField];
+					if(val.indexOf(keyword) != -1)
+						{
+							if(ending.indexOf(item)==-1)
+								ending.push( item );
+						}
+				}
 			}
 			return ending;
 		}
