@@ -27,6 +27,11 @@
 		//计算鼠标坐标与显示对象的差
 		private	var offsetX : Number; //= targetX - __ele.x;
 		private	var offsetY : Number; //= targetY - __ele.y;
+		
+		/**
+		 * 临界值 ,调整,超过这个值才算拖动
+		 */
+		public static var thresholdMoveDistance:Number=1.0;
 
 		/**
 		 * 是否正在拖拽中
@@ -99,7 +104,7 @@
 		private function moveByMouse(e : *) : void
 		{
 			//1:灵敏度调整,超过这个值才算拖动;
-			if (Math.abs(this.__ele.parent.mouseX - __oldMousePos[0]) > 1 || Math.abs(this.__ele.parent.mouseY - __oldMousePos[1]) > 1) 
+			if (Math.abs(this.__ele.parent.mouseX - __oldMousePos[0]) > thresholdMoveDistance || Math.abs(this.__ele.parent.mouseY - __oldMousePos[1]) > thresholdMoveDistance) 
 			{
 				//
 				var targetX : Number = this.__ele.parent.mouseX;				var targetY : Number = this.__ele.parent.mouseY;

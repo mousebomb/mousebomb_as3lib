@@ -1,8 +1,9 @@
 package org.mousebomb.ui
 {
 	import flash.display.Sprite;
+import flash.geom.Rectangle;
 
-	/**
+/**
 	 * 二维架子容器
 	 *  更加纯粹，提供回调整合数据，不再以继承做主要扩展方式
 	 * @author Mousebomb mousebomb@gmail.com
@@ -60,6 +61,22 @@ package org.mousebomb.ui
 			addLiCallback = addLiCallback_;
 			rememberPage=rememberPage_;
 		}
+
+        /**
+         * 自动配置数据
+         * 很长时间以来，手动配置那些参数总要计算区域，这里直接输入区域大小等信息，自动计算
+         * @param shelfRect 此shelf在其容器中的距形区域
+         */
+        public function autoConfig(shelfW:Number,shelfH:Number,liW:Number,liH:Number,cols_:int,rows_:int, liClass_:Class, addLiCallback_:Function,rememberPage_:Boolean=true ):void
+        {
+            marginX = shelfW/cols_;
+            marginY = shelfH/rows_;
+            pageCount = cols_*rows_;
+            cols = cols_;
+            liClass = liClass_;
+            addLiCallback = addLiCallback_;
+            rememberPage = rememberPage_;
+        }
 
 
 		/**
